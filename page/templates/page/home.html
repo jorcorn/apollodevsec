@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<title>Apollo Devsec</title>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" type="text/css" href="{% static 'page/stylesheet.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("page/background.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">Apollo Devsec</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#information" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> LEADERSHIP</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> SECURITY CASE STUDIES</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> SERVICES</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <img src="{% static 'page/background.jpg' %}">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Apollo Devsec</span><br>
+    <span class="w3-jumbo w3-hide-small">WiFi and Smart Device Security Solutions </span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+    <span class="w3-large">Privacy and sensitive data protection</span>
+    <p><a href="#information" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+  </div>
+<!--  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">-->
+<!--    <i class="fa fa-facebook-official w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-instagram w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-snapchat w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-twitter w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+<!--  </div>-->
+</header>
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="information">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>We know WiFi security</h3>
+      <p>WiFi Routers and Smart Devices are trusted to securely transmit sensitive data. Your bank account information,
+        home address, internet searches, and health records submitted online typically travel safely through your router to the intended
+        recipient. However, these communications are highly susceptible to a variety of
+        exploitation attacks if your router and home device networks are incorrectly configured for security. Apollo Devsec's goal is
+        to implement pragmatic solutions to home cybersecurity challenges.
+
+      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Vulnerability Examples</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img src="https://c.pxhere.com/photos/f1/7e/netgear_nighthawk_ac1900_wifi_router-1387040.jpg" srcset="https://c.pxhere.com/photos/f1/7e/netgear_nighthawk_ac1900_wifi_router-1387040.jpg!d" alt="technology, product, electronics, router, wifi, multimedia, nighthawk, electronic device, wireless access point, netgear, ac1900, wireless router, Free Images In PxHere" width="700" height="394">
+    </div>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container" style="padding:64px 16px" id="work">
+  <h3 class="w3-center">WiFi and Smart Devices Vulnerability Examples</h3>
+  <p class="w3-center w3-large">Hover and select to learn more</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/smartspeaker2.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://www.bbc.com/news/technology-53770778" target="_blank"><div class="img_description">Smart Speakers</div></a>
+    </div>
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/plotter.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://www.businessnewsdaily.com/10145-printer-security-risks.html" target="_blank"><div class="img_description">Printers</div></a>
+    </div>
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/modem.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://blog.codinghorror.com/welcome-to-the-internet-of-compromised-things/" target="_blank"><div class="img_description">Routers</div></a>
+    </div>
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/camera.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://www.makeuseof.com/tag/how-easy-is-it-for-someone-to-hack-your-webcam/" target="_blank"><div class="img_description">Smart Cameras</div></a>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/tv.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://www.forbes.com/sites/thomasbrewster/2017/03/07/cia-wikileaks-samsung-smart-tv-hack-security/?sh=c7e48064bcd5" target="_blank"><div class="img_description">Smart TVs</div></a>
+    </div>
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/bulb.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://ledlightinginfo.com/can-smart-light-bulbs-spy-on-you" target="_blank"><div class="img_description">Smart Lightbulbs</div></a>
+    </div>
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/nest.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://www.smarthomeglobe.com/can-a-nest-thermostat-be-hacked/" target="_blank"><div class="img_description">Thermostats</div></a>
+    </div>
+    <div class="w3-col l3 m6 container">
+        <img src="{% static 'page/door.jpg' %}" width="100%" class="w3-hover-opacity">
+          <a href="https://www.diysmarthomesolutions.com/smart-locks-hacked-how-to-prevent-it/" target="_blank"><div class="img_description">Smart Door Locks</div></a>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-center w3-dark-grey" style="padding:64px 16px" id="pricing">
+  <h3>SERVICES</h3>
+  <p class="w3-large">At-home security services for privacy and sensitive data protection</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">WiFi Security Consultation</li>
+        <li class="w3-padding-16">Hardware Selection for Security and Privacy</li>
+        <li class="w3-padding-16">Router Configuration</li>
+        <li class="w3-padding-16">Personal Cybersecurity Education</li>
+<!--        <li class="w3-padding-16">-->
+<!--          <h2 class="w3-wide">$ 10</h2>-->
+<!--          <span class="w3-opacity">per month</span>-->
+<!--        </li>-->
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#contact"><button class="w3-button w3-black w3-padding-large">Contact Us</button></a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-48">Network Segmentation</li>
+        <li class="w3-padding-16">Work from Home Device Isolation</li>
+        <li class="w3-padding-16">Smart Device Network Implementation</li>
+        <li class="w3-padding-16">Custom Home Networking Solutions</li>
+
+<!--        <li class="w3-padding-16">-->
+<!--          <h2 class="w3-wide">$ 25</h2>-->
+<!--          <span class="w3-opacity">per month</span>-->
+<!--        </li>-->
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#contact"><button class="w3-button w3-black w3-padding-large">Contact Us</button></a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32">Security Software Consultation</li>
+        <li class="w3-padding-16">Virtual Private Network (VPN)</li>
+        <li class="w3-padding-16">Firewall</li>
+        <li class="w3-padding-16">Anti-Virus Software</li>
+
+<!--        <li class="w3-padding-16">-->
+<!--          <h2 class="w3-wide">$ 50</h2>-->
+<!--          <span class="w3-opacity">per month</span>-->
+<!--        </li>-->
+        <li class="w3-light-grey w3-padding-24">
+          <a href="#contact"><button class="w3-button w3-black w3-padding-large">Contact Us</button></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:64px 16px" id="team">
+  <h3 class="w3-center">LEADERSHIP</h3>
+  <p class="w3-center w3-large">
+“It is not death that a man should fear, but he should fear never beginning to live.” Marcus Aurelius, Meditations</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px;">
+    <div class="w3-col l10 m6 w3-margin-bottom" style="max-width:33%; margin-left:33%; margin-right:33%">
+      <div class="w3-card">
+        <img src="{% static 'page/jordan.jpg' %}" width="100%">
+        <div class="w3-container">
+          <h3>Jordan</h3>
+          <p class="w3-opacity">Founder</p>
+          <p>Jordan is Apollo Devsec's founder and field lead. His belief that everyone has the right to privacy
+            and secure data transmission drives Apollo forward.
+          </p>
+          <a href="#contact"> <button class="w3-button w3-light-grey w3-block" style="margin-bottom: 10px"><i class="fa fa-envelope"></i> Contact</button></a>
+        </div>
+      </div>
+    </div>
+<!--    <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--      <div class="w3-card">-->
+<!--        <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">-->
+<!--        <div class="w3-container">-->
+<!--          <h3>Anja Doe</h3>-->
+<!--          <p class="w3-opacity">Art Director</p>-->
+<!--          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+<!--          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--      <div class="w3-card">-->
+<!--        <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">-->
+<!--        <div class="w3-container">-->
+<!--          <h3>Mike Ross</h3>-->
+<!--          <p class="w3-opacity">Web Designer</p>-->
+<!--          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+<!--          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--      <div class="w3-card">-->
+<!--        <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">-->
+<!--        <div class="w3-container">-->
+<!--          <h3>Dan Star</h3>-->
+<!--          <p class="w3-opacity">Designer</p>-->
+<!--          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>-->
+<!--          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</div>
+
+<!--&lt;!&ndash; Promo Section "Statistics" &ndash;&gt;-->
+<!--<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">-->
+<!--  <div class="w3-quarter">-->
+<!--    <span class="w3-xxlarge">14+</span>-->
+<!--    <br>Partners-->
+<!--  </div>-->
+<!--  <div class="w3-quarter">-->
+<!--    <span class="w3-xxlarge">55+</span>-->
+<!--    <br>Projects Done-->
+<!--  </div>-->
+<!--  <div class="w3-quarter">-->
+<!--    <span class="w3-xxlarge">89+</span>-->
+<!--    <br>Happy Clients-->
+<!--  </div>-->
+<!--  <div class="w3-quarter">-->
+<!--    <span class="w3-xxlarge">150+</span>-->
+<!--    <br>Meetings-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!-- About Section -->
+<div class="w3-container" style="padding:64px 16px" id="about">
+  <h3 class="w3-center">COMPANY PRINCIPLES</h3>
+  <p class="w3-center w3-large">Key values of our company</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsiveness</p>
+      <p>Personalized networking solutions with an emphasis on clear communication and planning</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Protection against illicit spying and data collection is foundational value of Apollo Devsec</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Education</p>
+      <p>Service transparancy and explanation comes first when you have questions</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Problem-Solving</p>
+      <p>Apollo Devsec is committed to learning and growing to keep finding security solutions to meet your challenges</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+
+<!--&lt;!&ndash; Skills Section &ndash;&gt;-->
+<!--<div class="w3-container w3-light-grey w3-padding-64">-->
+<!--  <div class="w3-row-padding">-->
+<!--    <div class="w3-col m6">-->
+<!--      <h3>Our Skills.</h3>-->
+<!--      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>-->
+<!--      tempor incididunt ut labore et dolore.</p>-->
+<!--      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>-->
+<!--      tempor incididunt ut labore et dolore.</p>-->
+<!--    </div>-->
+<!--    <div class="w3-col m6">-->
+<!--      <p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>Photography</p>-->
+<!--      <div class="w3-grey">-->
+<!--        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>-->
+<!--      </div>-->
+<!--      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Design</p>-->
+<!--      <div class="w3-grey">-->
+<!--        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>-->
+<!--      </div>-->
+<!--      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Photoshop</p>-->
+<!--      <div class="w3-grey">-->
+<!--        <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:64px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Let's get in touch. Send Apollo a message:</p>
+  <div style="margin-top:48px">
+<!--    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Conneticut, United States</p>-->
+<!--&lt;!&ndash;    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>&ndash;&gt;-->
+<!--    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: apollodevsec@gmail.com</p>-->
+<!--    <br>-->
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
+        {{ field }}
+      {% endfor %}
+
+<!--      <p><input class="w3-input w3-border" type="text" placeholder="NAMEN" required name="name"></p>-->
+<!--      <p><input class="w3-input w3-border" type="text" placeholder="THE PHP ONE" required name="email"></p>-->
+<!--      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="subject"></p>-->
+<!--      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="message"></p>-->
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+    <!-- Image of location/map -->
+    <img src="{% static 'page/city.jpg' %}" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+<!--  <div class="w3-xlarge w3-section">-->
+<!--    <i class="fa fa-facebook-official w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-instagram w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-snapchat w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-twitter w3-hover-opacity"></i>-->
+<!--    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+<!--  </div>-->
+</footer>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
